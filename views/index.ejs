@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog API List </title>
+</head>
+
+<body>
+    <h1 style="background-color: blue; text-align: center;">Backend API list || Developed by Md.Tajal Islam</h1>
+    <h3 style="text-align: center;">Company Name: SAYBURGH Solution</h3>
+    <hr>
+    <p style="text-align: center;"><i>Module Name:</i><b>Users {Task No-1 & 2}</b></p>
+    <hr style="height: 6px; background-color: aqua;">
+    <p style="background-color:rgb(235, 224, 224);">
+        1.Registration/User create:=> http://localhost:6001/api/sign-up <span style="background-color:rgb(196, 43, 43);">POST</span>
+
+        <pre>
+            Payload:
+            {
+                "name":"Md Tajal Islam",
+                "email":"mdtajalislam1189@gmail.com",
+                "password":"12345678",
+                "phone":"12345678",
+                "address":"New address"
+            }
+        </pre>
+        <pre>
+            Responce like:
+            {
+                "user": {
+                    "_id": "6084449076da6543d9a13d39",
+                    "name": "Md Tajal Islam",
+                    "email": "mdtajalislam1189@gmail.com",
+                    "password": "$2b$10$Mk39o1ov9QZHA1Ch1awWbuQHzLlfcPQdc1Iw7b4ajx8iN1o.eDrru",
+                    "phone": "12345678",
+                    "address": "New address",
+                    "createdAt": "2021-04-24T16:17:20.296Z",
+                    "updatedAt": "2021-04-24T16:17:20.296Z",
+                    "__v": 0
+                }
+            }
+        </pre>
+        
+    </p>
+    <p style="background-color:rgb(235, 224, 224);">
+        2.log-in:=> http://localhost:6001/api/sign-in <span style="background-color:rgb(196, 43, 43);">POST</span>
+
+        <pre>
+            Payload:
+        {
+            "email":"mdtajal@gmail.com", 
+            "password":"sopnilislam", 
+        }
+        </pre> ***When log-in then it create a jwt token. <br>
+        <p></p>
+        <pre>
+           "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMTY0MWNmNmZkOTFkMjMzNzky
+            YWM4MSIsIm5hbWUiOiJNeU5hbWUiLCJlbWFpbCI6Im1kdGFqYWxAZ21haWwuY29tIiwiYWRkcmVzcyI6I
+            kthemxhIiwicGhvbmUiOiIxMjY3MzM3NSIsImlhdCI6MTYxMjA3MTQyN30.bVVxDgdOvuXNu_b1Q0Oqg7
+            kfBaN-9rraAnC1tgJ9UOs"
+        </pre>
+
+    </p>
+
+    <p style="text-align: center;"><i>Module Name:</i><b>Post Module {Task No-3}</b></p>
+
+    <p style="background-color:rgb(235, 224, 224);">
+        3.All Post's View:=> http://localhost:6001/api/post <span style="background-color:rgb(196, 43, 43);">GET</span> <br>
+
+        <pre>
+            Credentials:
+            <span style="background-color:rgb(68, 48, 48);">Send authorization token to Headers</span>
+        </pre>
+    </p>
+
+    <p style="background-color:rgb(235, 224, 224);">
+        4.Post create:=> http://localhost:6001/api/post <span style="background-color:rgb(196, 43, 43);">POST</span> <br>
+
+        <pre>
+            Credentials:
+            <span style="background-color:rgb(68, 48, 48);">Send authorization token to Headers</span>
+            {
+                "title":"New post second",
+                "description":"Details about blogs",
+                "user_id":"60844291c5b3da414555a4f8",
+                "tags":["New","Old"],
+                "selectedFile":"New File",
+                "likeCount":1
+            }
+        </pre> Output like:
+        <pre>
+            {
+                "tags": [
+                    "New",
+                    "Old"
+                ],
+                "likeCount": 1,
+                "_id": "608446294e5d7e4479a6d05d",
+                "title": "New post second",
+                "description": "Details about blogs",
+                "user_id": "60844291c5b3da414555a4f8",
+                "selectedFile": "New File",
+                "createdAt": "2021-04-24T16:24:09.945Z",
+                "updatedAt": "2021-04-24T16:24:09.945Z",
+                "__v": 0
+            }
+        </pre>
+    </p>
+
+    <p style="background-color:rgb(235, 224, 224);">
+        5.Post updated:=> http://localhost:6001/api/:_id <span style="background-color:rgb(196, 43, 43);">PATCH</span> <br>
+
+        <pre>
+            Credentials:
+            <span style="background-color:rgb(68, 48, 48);">Send authorization token to Headers</span>
+            {
+                "title":"New post second",
+                "description":"Details about blogs",
+                "user_id":"60844291c5b3da414555a4f8",
+                "tags":["New","Old"],
+                "selectedFile":"New File",
+                "likeCount":1
+            }
+        </pre> Output like:
+        <pre>
+            {
+                "tags": [
+                    "New",
+                    "Old"
+                ],
+                "likeCount": 1,
+                "_id": "608446294e5d7e4479a6d05d",
+                "title": "New post second",
+                "description": "Details about blogs",
+                "user_id": "60844291c5b3da414555a4f8",
+                "selectedFile": "New File",
+                "createdAt": "2021-04-24T16:24:09.945Z",
+                "updatedAt": "2021-04-24T16:24:09.945Z",
+                "__v": 0
+            }
+        </pre>
+    </p>
+
+<p style="background-color:rgb(235, 224, 224);">
+    6.Post delete:=> http://localhost:6001/api/:_id <span style="background-color:rgb(196, 43, 43);">DELETE</span>
+
+    <pre>
+        
+        Credentials:
+        <span style="background-color:rgb(68, 48, 48);">Send authorization token to Headers</span>
+    </pre>
+</p>
+
+</body>
+
+</html>
